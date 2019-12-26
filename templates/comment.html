@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form name="addForm" id="addForm" method="POST" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Reply</label>
+              <input type="text" class="form-control" placeholder="Title" name="title" id="title" required data-validation-required-message="Please enter a title.">
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Author</label>
+                  <input type="text" class="form-control" placeholder="author" name="author" id="title" required data-validation-required-message="Please enter a title.">
+                  <p class="help-block text-danger"></p>
+                </div>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-secondary" id="sendMessageButton">Send</button>
+            </div>
+{%endblock content%}

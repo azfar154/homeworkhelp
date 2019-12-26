@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content %}
+    <div class="post-preview">
+    <a>
+      <h2 class="post-title" style="15px;">
+        {{ comment.body }}
+      </h2>
+    </a>
+    <p class="post-meta">Posted by {{ comment.author }} on {{ comment.timestamp.strftime('%B %d, %Y') }}</p>
+  </div>
+</div>
+
+{% endblock content%}>

@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="post-preview" style="padding-left: 200px;">
+  <a href="{{ url_for('post', post_id=post.id) }}">
+    <h2 class="post-title">
+      {{ post.title }}
+    </h2>
+    <h3 class="post-subtitle">
+      {{ post.subtitle }}
+    </h3>
+  </a>
+  <p class="post-meta">Posted by {{ post.author }} on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
+  <p class="post-meta">Number : {{post.number}}</p>
+</div>
+<hr>
+</div>
+<br>
+        <div class="col-lg-8 col-md-10 mx-auto">
+        {% for comment in comments %}
+          <div class="post-preview" style="background-color: #DCDCDC;">
+            <a href="{{ url_for('view_single_comment',comment_id = comment.id,post_id=post.id) }}">
+              <span class="meta">
+                {{ comment.body }}
+              </span>
+            </a>
+            <br>
+            <p class="post-meta">Posted by {{ comment.author }} on {{ comment.timestamp.strftime('%B %d, %Y') }}</p>
+          </div>
+          {% endfor %}
+          <hr>
+        </div>
+    
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <form name="addForm" id="addForm" method="POST" novalidate>
+        <div class="control-group" style="background-color:white;">
+          <div class="form-group floating-label-form-group controls">
+            <h1>Reply </h1>
+            <label>Body</label>
+            <input type="text" class="form-control" placeholder="Text" name="title" id="title" required data-validation-required-message="Please enter a title.">
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Author</label>
+                <input type="text" class="form-control" placeholder="Author" name="author" id="title" required data-validation-required-message="Please enter a title.">
+                <p class="help-block text-danger"></p>
+              </div>
+          <div id="success"></div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-secondary" id="sendMessageButton">Send</button>
+</div></div></div></form></div></div>
+{% endblock content%}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block form %}
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form name="addForm" id="addForm" method="POST" action="{{ url_for('processflag') }}" novalidate>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Author</label>
+                <input type="text" class="form-control" placeholder="Please enter the author" name="author" id="author" required data-validation-required-message="Please enter your phone number.">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                  <label>Title</label>
+                  <input type="text" class="form-control" placeholder="Please enter the title" name="title" id="author" required data-validation-required-message="Please enter your phone number.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary" id="sendMessageButton">Send</button>
+                  </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endblock form%}

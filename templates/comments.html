@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content%}
+{% for comment in comments %}
+<h1 class="text-muted">{{comment.body}}</h1>
+{% endfor%}
+{%endblock content%} 
